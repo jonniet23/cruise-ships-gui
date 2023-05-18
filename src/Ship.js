@@ -4,5 +4,11 @@ function Ship(name) {
 
 };
 
+Ship.prototype.setSail = function() {
 
+    if(this.startingPort ='') {
+        return this.startingPort;
+    }
+    
+};
 module.exports = Ship;
