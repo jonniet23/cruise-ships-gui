@@ -31,6 +31,7 @@ describe('Ship', () => {
     ship.setSail();
 
     expect(ship.currentPort).toBeFalsy();
+    expect(southampton.ships).not.toContain(ship);
     
 });
 
@@ -45,6 +46,7 @@ it('can dock at different ports', () => {
     ship.dock();
 
     expect(ship.currentPort).toBe(copenhagen);
+    expect(copenhagen.ships).toContain(ship);
 });
 
 it('can\'t sail futher than its itinerary', () => {
@@ -58,6 +60,15 @@ it('can\'t sail futher than its itinerary', () => {
 
     expect(() => ship.setSail()).toThrowError('End of itinerary reached');
 
+});
+
+it('gets added to port on instatiation' , () => {
+   
+   const southampton = new Port('Southampton');
+   const itinerary = new Itinerary([southampton]);
+   const ship = new Ship(itinerary);
+
+   expect(southampton.ships).toContain(ship);
 });
 
 });
