@@ -22,7 +22,7 @@ describe('new port variable', () => {
  });
 
  it('can add a ship', () => {
-  const ship = {};
+  const ship = jest.fn();
 
   port.addShip(ship);
 
@@ -30,8 +30,8 @@ describe('new port variable', () => {
  });
 
  it('can remove a ship', () => {
-   const qe1 = {};
-    const qe2 = {};
+   const qe1 = jest.fn();
+    const qe2 = jest.fn();
 
     port.addShip(qe1);
     port.addShip(qe2);
