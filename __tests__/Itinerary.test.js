@@ -11,8 +11,8 @@ describe('Itinerary', () => {
     });
 
     it('can have ports' , () => {
-        const southampton =new Port('Southampton');
-        const copenhagen = new Port('Copenhagen');
+        const southampton = jest.fn();
+        const copenhagen = jest.fn();
         
         const itinerary = new Itinerary([southampton, copenhagen]);
         

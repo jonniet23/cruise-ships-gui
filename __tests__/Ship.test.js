@@ -25,7 +25,9 @@ describe('Ship', () => {
             ships : []
          };
          
-          itinerary = new Itinerary([southampton,copenhagen]);
+          itinerary = {
+            ports : [southampton,copenhagen]
+          };
           ship = new Ship(itinerary);
  
       });
@@ -56,18 +58,13 @@ describe('Ship', () => {
    
    });
    
-   describe('with ports and an itinerary', () => {
-      beforeEach(() => {
-          
-           itinerary = new Itinerary([southampton,copenhagen]);
-           ship = new Ship(itinerary);
-  
-       });
+   
   it('can dock at different ports', () => {
     
-    ship.setSail();
+    ship.setSail();  
     ship.dock();
-
+ //couldn't find a place in this 
+ //test to use a stub!-track says there is one!
     expect(ship.currentPort).toBe(copenhagen);
     expect(copenhagen.addShip).toHaveBeenCalledWith(ship);
 });
@@ -84,4 +81,4 @@ it('can\'t sail futher than its itinerary', () => {
 
 });
 });
-});
+
