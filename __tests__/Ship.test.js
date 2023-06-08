@@ -63,8 +63,7 @@ describe('Ship', () => {
     
     ship.setSail();  
     ship.dock();
- //couldn't find a place in this 
- //test to use a stub!-track says there is one!
+ 
     expect(ship.currentPort).toBe(copenhagen);
     expect(copenhagen.addShip).toHaveBeenCalledWith(ship);
 });

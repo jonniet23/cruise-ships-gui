@@ -1,4 +1,4 @@
-/*global describe it expect */
+
 const Port = require('../src/Port.js');
 
 describe('Port', () => {
