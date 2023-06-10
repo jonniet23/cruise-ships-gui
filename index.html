@@ -10,15 +10,26 @@
 </head>
 <body>
     <div id="viewport">
-        
+    <div id="ports">
+        </div>  
     </div>
+    <div class="port" data-port-name="Oslo" data-port-index="0"></div>
     <script src="src/controller.js"></script>
-    <script>
-        const controller = new Controller();
-    </script>
+    <script src="src/Itinerary.js"></script>
     <script src="src/Port.js"></script>
     <script>
         const port = new Port();
+       </script>
+    <script>
+        const controller = new Controller();
+        const itinerary = new Itinerary([
+      new Port('Oslo'), 
+      new Port('Helsinki'),
+      new Port('St Petersburg'),
+      new Port('Tallinn')
+    ])
+    controller.renderPorts(itinerary.ports)
     </script>
+    
 </body>
 </html>
